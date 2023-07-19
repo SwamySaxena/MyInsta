@@ -23,6 +23,17 @@ function App() {
       const foundUser = JSON.parse(loggedInUser);
       dispatch(loginSuccess(foundUser));
     }
+    fetch("https://swamysaxenainsta.onrender.com")
+      .then((res) => res.json())
+      .then((data) => {
+        // Assuming the API response has a "user" field containing the user data
+        // You can adjust this based on your actual API response structure
+        dispatch(loginSuccess(data.user));
+      })
+      .catch((error) => {
+        console.error("Error fetching user data:", error);
+        // Handle errors if necessary
+      });
   }, [dispatch]);
   
   return (
