@@ -12,7 +12,7 @@ const cors = require("cors");
 const corsOptions = {
   origin: "https://swamysaxenamyinsta.onrender.com", // frontend URI (ReactJS)
 }
-app.use(cors(corsOptions));
+
 
 dotenv.config();
 
@@ -35,6 +35,7 @@ app.use('/images', express.static(path.join(__dirname, 'public/images')));
 app.use(express.json());
 app.use(helmet());
 app.use(morgan('common'));
+app.use(cors(corsOptions));
 
 // Mount Routes to paths
 app.use('/api/users', userRoute);
