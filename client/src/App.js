@@ -14,11 +14,6 @@ function App() {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    fetch("https://swamysaxenainsta.onrender.com")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
-  },[]);
   // Check if the user is logged in or not
   useEffect(() => {
     // Get the user from local storage

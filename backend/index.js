@@ -9,6 +9,12 @@ const morgan = require('morgan');
 const multer = require('multer');
 const path = require('path');
 
+const cors = require("cors");
+const corsOptions = {
+  origin: "YOUR_FRONTEND_URL", // frontend URI (ReactJS)
+}
+app.use(cors(corsOptions));
+
 dotenv.config();
 
 // Import Auth Route
