@@ -8,6 +8,11 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const multer = require('multer');
 const path = require('path');
+const cors = require("cors");
+const corsOptions = {
+  origin: "https://swamysaxenamyinsta.onrender.com", // frontend URI (ReactJS)
+}
+app.use(cors(corsOptions));
 
 dotenv.config();
 
